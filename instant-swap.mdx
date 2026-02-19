@@ -1,0 +1,25 @@
+---
+title: "Instant Private Swap"
+description: "Execute trades immediately without linking your wallet"
+---
+
+## Overview
+
+Instant Private Swap is the fastest way to trade on Cloak. It allows you to execute a swap immediately while breaking the on-chain link between your wallet and the execution.
+
+## How it Works
+
+1. **Sign Intent**: You sign an intent off-chain that specifies the input token, output token, and minimum amount out.
+2. **Orchestrator Processing**: Our orchestrator verifies your signature and selects an available Executor Wallet.
+3. **Execution**: The Executor Wallet submits the swap transaction to the Solana blockchain.
+4. **Settlement**: The output tokens are sent to your specified destination address.
+
+## Benefits
+
+- **Privacy**: Your wallet does not send the swap transaction.
+- **MEV Protection**: Since the transaction is submitted by our private executors, it is harder for MEV bots to front-run your specific wallet.
+
+## Fees
+
+- **Service Fee**: 10–15 bps (0.10% - 0.15%)
+- **Network Fee**: Standard Solana transaction fees (paid by the executor and covered by the service fee).

@@ -1,0 +1,27 @@
+---
+title: "Security & Trust"
+description: "How Cloak protects your funds and privacy"
+---
+
+## Threat Model
+
+Cloak is designed to protect against specific threats inherent to public blockchains:
+- **Wallet Linkability**: Preventing observers from easily linking a swap to your main wallet.
+- **Strategy Inference**: Making it difficult to guess your overall position or strategy based on a single transaction.
+- **MEV/Sandwich Attacks**: Reducing the risk of predatory trading bots by using private executors.
+
+## What we DO protect against
+
+- **Basic Linkage**: Your wallet never signs the swap transaction.
+- **Clustering**: Repeated trades from the same wallet are harder to correlate.
+- **Pattern Recognition**: Chunking and randomization make large orders look like unrelated market noise.
+
+## What we do NOT protect against
+
+- **Nation-State Adversaries**: Advanced traffic analysis (IP/timing correlation) is out of scope.
+- **Fund Flows**: If you withdraw from a KYC'd exchange directly to a fresh wallet and then use Cloak, the flow of funds is still traceable on-chain.
+
+## Safety Principles
+
+1. **No Loss of Funds**: In the event of a system failure, your funds should always be recoverable.
+2. **Non-Custodial**: We do not hold your private keys or pool your funds (except in the specific case of the Escrow for Stealth Sells).

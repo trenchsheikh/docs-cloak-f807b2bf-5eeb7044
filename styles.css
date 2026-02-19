@@ -1,0 +1,7 @@
+/* Target only main content panel */
+main {
+  background-image: url('/images/Vector(2).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

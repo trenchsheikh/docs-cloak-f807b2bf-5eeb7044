@@ -1,0 +1,22 @@
+---
+title: "Non-Custodial"
+description: "You retain control of your assets"
+---
+
+## Philosophy
+
+Cloak Trade is built on a non-custodial philosophy. We believe that privacy tools should not require you to trust a third party with your funds.
+
+## How it applies
+
+### Instant Swaps & Stealth Buys
+For these modes, the Executor Wallet sources the input token (SOL or USDC) from its own inventory. You effectively "pay" the executor atomically. **Your funds never leave your wallet until the swap is executed and the output tokens are sent to you.**
+
+### Stealth Sells (The Escrow Exception)
+Stealth Sells require you to deposit the token you wish to sell into a smart contract (Escrow). However, this contract is **trust-minimized**:
+- **Defined Logic**: The contract logic is immutable and verified on-chain.
+- **Restricted Withdrawal**: Only an executor with a valid, signed proof from you can withdraw chunks for execution.
+- **User Control**: You can cancel the order and withdraw your remaining funds from the escrow at any time (subject to the cancellation policy).
+
+## No Pooling
+Unlike mixers, Cloak does not pool user funds. Each execution is distinct. This simplifies the regulatory profile and reduces the risk of your clean funds being tainted by association with illicit actors.

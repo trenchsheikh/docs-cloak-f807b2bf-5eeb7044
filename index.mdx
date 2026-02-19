@@ -1,0 +1,50 @@
+---
+title: "Cloak Trade"
+description: "Advanced privacy-preserving execution on Solana"
+---
+
+## Overview
+
+Cloak Trade allows you to execute swaps on Solana without linking your wallet to the execution or revealing your strategy. We use a network of executor wallets and advanced orchestration to mask your activity and protect you from MEV.
+
+<Card title="Start Trading" icon="rocket" href="https://app.cloak.trade" horizontal>
+  Launch the Cloak Trade app and start trading privately today.
+</Card>
+
+## Core Features
+
+Protect your alpha with our advanced execution modes.
+
+<Columns cols={2}>
+  <Card title="Instant Private Swap" icon="bolt" href="/features/instant-swap">
+    Execute immediately. Your wallet signs the intent, but our executors submit the transaction.
+  </Card>
+  <Card title="Stealth Execution" icon="user-secret" href="/features/stealth">
+    Split large orders into randomized chunks over time to minimize market impact and tracking.
+  </Card>
+  <Card title="Private Limit Orders" icon="chart-line" href="/features/limit-orders">
+    Place limit orders that are completely invisible to the public order book until execution.
+  </Card>
+  <Card title="Private DCA" icon="clock" href="/features/dca">
+    Automate Dollar Cost Averaging schedules without leaving an on-chain pattern.
+  </Card>
+</Columns>
+
+## How it Works
+
+Cloak separates the **intent** (what you want to do) from the **execution** (who does it).
+
+<Columns cols={2}>
+  <Card title="Architecture" icon="sitemap" href="/architecture/overview">
+    Learn how the Relay, Orchestrator, and Executor Wallets work together to protect your privacy.
+  </Card>
+  <Card title="Security & Trust" icon="shield-check" href="/security/guarantees">
+    Understand our non-custodial design, escrow mechanisms for sells, and threat model.
+  </Card>
+</Columns>
+
+## Safety First
+
+<Card title="Non-Custodial" icon="lock" href="/security/non-custodial">
+  Cloak Trade is not a mixer. We do not pool funds. You retain custody of your assets until the moment of execution.
+</Card>

@@ -1,0 +1,68 @@
+---
+title: "Quickstart"
+description: "Start trading privately on Solana in minutes"
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+- A Solana wallet (e.g., [Phantom](https://phantom.app/), [Backpack](https://backpack.app/), or [Solflare](https://solflare.com/)).
+- Some SOL in your wallet to pay for transaction fees (though execution fees are taken from the trade).
+
+## Step 1: Connect to Cloak
+
+Navigate to [app.cloak.trade](https://app.cloak.trade) and click the **Connect Wallet** button in the top right corner.
+
+<Frame>
+  
+</Frame>
+
+Select your wallet provider from the list and approve the connection request.
+
+## Step 2: Choose an Execution Mode
+
+Cloak offers different modes depending on your needs:
+
+- **Instant**: For immediate execution with privacy.
+- **Stealth**: For large orders that need to be split over time.
+- **Limit**: For setting a specific price target.
+
+<Tip>
+  Use **Stealth Mode** if you are moving a large amount and want to avoid slippage or front-running.
+</Tip>
+
+## Step 3: Execute a Swap
+
+1. Select the token you want to **Sell** and the token you want to **Buy**.
+2. Enter the amount to trade.
+3. Adjust **Slippage** and **Priority Fees** in the settings if needed.
+4. Click **Swap**.
+
+### Signing the Intent
+
+Unlike a normal swap, you will be asked to **sign an intent**, not a transaction. This signature authorizes Cloak's executor network to perform the trade on your behalf according to your specified parameters.
+
+<Warning>
+  You are **not** sending funds to a contract (unless using Stealth Sell). You are signing a message that allows the trade to happen atomically.
+</Warning>
+
+## Step 4: Track Your Trade
+
+Once signed, your order will appear in the **Orders** tab or **History** tab.
+
+- **Status**: You can see if your trade is `Queued`, `Executing`, or `Settled`.
+- **Details**: Click on a trade to view the specific chunks and execution timestamps.
+
+## Next Steps
+
+Now that you've made your first trade, learn more about the advanced features:
+
+<Columns cols={2}>
+  <Card icon="user-secret" href="stealth.mdx" title="Stealth Execution">
+    Learn how chunking works.
+  </Card>
+  <Card icon="chart-line" href="/limit-orders" title="Limit Orders">
+    Set price targets privately.
+  </Card>
+</Columns>

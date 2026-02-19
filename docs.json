@@ -1,0 +1,46 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Cloak Trade",
+  "theme": "maple",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/light.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#4F8EF7",
+    "light": "#4F8EF7",
+    "dark": "#2E5FD9"
+  },
+  "topbar": {
+    "enabled": true
+  },
+  "styles": ["styles.css"],
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": ["intro", "quickstart"]
+      },
+      {
+        "group": "Core Features",
+        "pages": ["instant-swap", "stealth", "limit-orders", "dca"]
+      },
+      {
+        "group": "Architecture",
+        "pages": ["overview"]
+      },
+      {
+        "group": "Security",
+        "pages": ["guarantees", "non-custodial"]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/cloakdotrade",
+      "github": "https://github.com/cloaktrade",
+      "discord": "https://discord.gg/cloaktrade"
+    }
+  }
+}

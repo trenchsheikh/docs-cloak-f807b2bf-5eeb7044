@@ -1,0 +1,33 @@
+---
+title: "Stealth Execution"
+description: "Split large orders to minimize impact and tracking"
+---
+
+## Overview
+
+Stealth Execution (also known as Stealth Buy/Sell) is designed for larger orders. Instead of executing everything in one go, Cloak splits your order into multiple randomized "chunks" and executes them over a period of time.
+
+## Configuration
+
+When selecting Stealth Mode, you can customize:
+
+- **Duration**: How long the execution should take (e.g., 5 minutes, 30 minutes).
+- **Intensity**:
+  - **Low**: 3–5 chunks, longer delays (15–40s).
+  - **Medium**: 5–9 chunks, medium delays (10–30s).
+  - **High**: 8–15 chunks, short delays (5–25s).
+
+## Mechanics
+
+1. **Randomization**: The size of each chunk and the delay between them are randomized within bounds.
+2. **Executor Rotation**: Each chunk may be executed by a different Executor Wallet to further obfuscate the pattern.
+3. **Escrow (For Sells)**: For Stealth Sells, your tokens are deposited into a non-custodial escrow program. Chunks are withdrawn only when verified by the orchestrator, ensuring safety.
+
+## Use Cases
+
+- **Accumulation**: Key for building a position without alerting the market.
+- **Exit**: Unwind a large position without crashing the price or revealing your total holding.
+
+## Fees
+
+- **Service Fee**: 20–30 bps (0.20% - 0.30%)
