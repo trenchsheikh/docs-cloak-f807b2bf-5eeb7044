@@ -5,20 +5,20 @@ description: "Set price targets without revealing them to the public book"
 
 ## Overview
 
-Private Limit Orders allow you to set a specific price at which you want to buy or sell. Unlike standard limit orders on a DEX, Cloak's limit orders are **not visible** on the public order book.
+Private Limit Orders allow specification of a price level for buy or sell execution. Unlike public DEX limit orders, CLOAK limit orders are **not** exposed on the public order book.
 
 ## How it Works
 
-1. **Intent Creation**: You specify the `limit_price` in your intent.
-2. **Monitoring**: The Cloak Orchestrator monitors the market price off-chain.
-3. **Trigger**: When the market price matches your limit price (incorporating fees and slippage), the Orchestrator triggers the execution.
-4. **Execution**: The trade is executed using the standard Instant or Stealth mechanics, depending on your preference.
+1. **Intent Creation**: The client specifies `limit_price` in the intent.
+2. **Monitoring**: The CLOAK Orchestrator monitors market price off-chain.
+3. **Trigger**: When market price satisfies the limit condition (accounting for fees and slippage), the Orchestrator triggers execution.
+4. **Execution**: The trade is executed using Instant or Stealth mechanics according to configuration.
 
 ## Privacy Advantage
 
-Since your order is not on-chain until it executes, other market participants cannot see your buy/sell walls. This prevents:
-- **Front-running**: Bots cannot place orders just ahead of yours.
-- **Price Manipulation**: The market cannot react to your pending liquidity.
+Because the order is not on-chain until execution, other participants cannot observe your limit level. This mitigates:
+- **Front-running**: Bots cannot position ahead of your order.
+- **Information leakage**: The market cannot react to your pending liquidity.
 
 ## Fees
 

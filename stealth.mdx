@@ -5,28 +5,28 @@ description: "Split large orders to minimize impact and tracking"
 
 ## Overview
 
-Stealth Execution (also known as Stealth Buy/Sell) is designed for larger orders. Instead of executing everything in one go, Cloak splits your order into multiple randomized "chunks" and executes them over a period of time.
+Stealth Execution (Stealth Buy/Sell) is intended for larger order sizes. Instead of a single execution, CLOAK fragments the order into multiple randomized execution chunks and executes them over a configurable time window.
 
 ## Configuration
 
-When selecting Stealth Mode, you can customize:
+In Stealth Mode you can configure:
 
-- **Duration**: How long the execution should take (e.g., 5 minutes, 30 minutes).
+- **Duration**: Execution window (e.g., 5 minutes, 30 minutes).
 - **Intensity**:
-  - **Low**: 3–5 chunks, longer delays (15–40s).
+  - **Low**: 3–5 chunks, longer inter-chunk delays (15–40s).
   - **Medium**: 5–9 chunks, medium delays (10–30s).
-  - **High**: 8–15 chunks, short delays (5–25s).
+  - **High**: 8–15 chunks, shorter delays (5–25s).
 
 ## Mechanics
 
-1. **Randomization**: The size of each chunk and the delay between them are randomized within bounds.
-2. **Executor Rotation**: Each chunk may be executed by a different Executor Wallet to further obfuscate the pattern.
-3. **Escrow (For Sells)**: For Stealth Sells, your tokens are deposited into a non-custodial escrow program. Chunks are withdrawn only when verified by the orchestrator, ensuring safety.
+1. **Randomization**: Chunk size and inter-chunk delay are randomized within configured bounds.
+2. **Executor Rotation**: Chunks may be executed by different Executor Wallets to further obfuscate the execution pattern.
+3. **Escrow (Sells)**: For Stealth Sells, tokens are deposited into a non-custodial escrow program. Withdrawals occur only upon orchestrator-verified intent; user funds remain protected.
 
 ## Use Cases
 
-- **Accumulation**: Key for building a position without alerting the market.
-- **Exit**: Unwind a large position without crashing the price or revealing your total holding.
+- **Accumulation**: Build a position with reduced market impact and attribution.
+- **Exit**: Unwind a large position with reduced price impact and reduced disclosure of total size.
 
 ## Fees
 

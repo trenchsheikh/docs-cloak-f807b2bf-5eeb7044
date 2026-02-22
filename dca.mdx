@@ -5,21 +5,22 @@ description: "Dollar Cost Average without leaving a predictable footprint"
 
 ## Overview
 
-Dollar Cost Averaging (DCA) is a strategy where you invest a fixed amount of money at regular intervals. Cloak's Private DCA automates this process while incorporating privacy-enhancing techniques.
+Dollar Cost Averaging (DCA) is a strategy of executing fixed-notional buys at regular intervals. CLOAK’s Private DCA automates this while applying privacy-preserving execution (intent/execution separation and optional stealth).
 
 ## Configuration
 
-You can customize your DCA schedule:
-- **Interval**: Frequency of buys (e.g., daily, weekly).
-- **Number of Occurrences**: How many times the buy should execute.
+DCA schedule parameters:
+
+- **Interval**: Execution frequency (e.g., daily, weekly).
+- **Number of Occurrences**: Total number of scheduled executions.
 - **Execution Style**:
-  - **Instant**: Executed immediately at the scheduled time.
-  - **Stealth**: Executed with randomized delays around the scheduled time to avoid detection.
+  - **Instant**: Executed at the scheduled time.
+  - **Stealth**: Executed with randomized delay around the scheduled time to reduce pattern visibility.
 
 ## Benefits
 
-- **Reduced Market Impact**: Scheduled buys are executed privately, preventing front-running.
-- **Privacy**: Consistent buying patterns are masked by the separation of intent and execution.
+- **Reduced Market Impact**: Scheduled buys are executed through the executor network, reducing front-running.
+- **Privacy**: Regular buying patterns are obscured by intent/execution separation.
 
 ## Fees
 

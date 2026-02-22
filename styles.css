@@ -1,7 +1,62 @@
-/* Target only main content panel */
-main {
-  background-image: url('/images/Vector(2).png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* ============================= */
+/* Cloak Trade – Protocol Styling */
+/* ============================= */
+
+/* Whole-page background: Vector graphic everywhere, slightly transparent */
+html,
+body {
+  position: relative !important;
+  min-height: 100% !important;
+}
+
+/* Dark mode: current opacity */
+html.dark body::before {
+  opacity: 0.5 !important;
+}
+
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  background-image: url('/images/Vector.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.12 !important; /* light mode: more transparent */
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Ensure all main layout areas show the same background (no solid fill) */
+main,
+#content-area,
+.content-area,
+#body-content,
+.body-content,
+#sidebar,
+#sidebar-content,
+.sidebar,
+.sidebar-content {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Cards: liquid glass (glassmorphism) effect – more visible */
+.card,
+.card-group .card {
+  background: rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+html.dark .card,
+html.dark .card-group .card {
+  background: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }

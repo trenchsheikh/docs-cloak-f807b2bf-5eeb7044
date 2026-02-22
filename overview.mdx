@@ -1,33 +1,38 @@
 ---
 title: "Architecture"
-description: "Understanding the Cloak Trade system"
+description: "Understanding the CLOAK system"
 ---
 
 ## High-Level Overview
 
-Cloak Trade is built on a modular architecture designed to separate user intent from on-chain execution. This separation is key to our privacy model.
+CLOAK uses a modular architecture that separates user intent from on-chain execution. This separation is the basis of the privacy model.
 
-The system consists of three main components:
+The system comprises three main components:
 
-1. **User Client (Web App)**: Where you connect your wallet and sign intents.
-2. **Relay & Orchestrator**: The backend services that process intents and manage execution.
-3. **Executor Network**: A distributed set of hot wallets that submit transactions to the blockchain.
+1. **User Client (Web App)**: Wallet connection and intent signing.
+2. **Relay & Orchestrator**: Backend services that process intents and manage execution.
+3. **Executor Network**: A set of hot wallets that submit transactions to the blockchain.
 
 ## Key Components
 
 ### 1. Relay Layer
-The Relay is a stateless service that receives encrypted intents from the client. It performs basic validation and rate-limiting before forwarding the encrypted payload to the Orchestrator. The Relay does not hold keys to decrypt the intent.
+
+The Relay is a stateless service that receives encrypted intents from the client. It performs validation and rate-limiting, then forwards the encrypted payload to the Orchestrator. The Relay does not possess decryption keys for intents.
 
 ### 2. Orchestrator
-The core of the system. The Orchestrator:
-- Verifies your signature.
+
+The Orchestrator is the core coordination component. It:
+
+- Verifies the user signature.
 - Decrypts the intent.
-- Plans the execution (e.g., scheduling chunks for Stealth Mode).
-- Selects an optimal Executor Wallet.
-- Monitors the blockchain for settlement.
+- Plans execution (e.g., chunk scheduling for Stealth Mode).
+- Selects an Executor Wallet.
+- Monitors the chain for settlement.
 
 ### 3. Executor Wallets
-These are hot wallets funded and managed by Cloak. They are responsible for submitting the actual swap transactions to Solana. Because they are distinct from your user wallet, they break the direct link between your address and the swap.
+
+Executor Wallets are hot wallets operated by CLOAK. They submit swap transactions to Solana. Because they are separate from the user wallet, they break the direct on-chain link between the user address and the swap.
 
 ### 4. Escrow Program
-For Stealth Sells, assets are deposited into a non-custodial Anchor program. This ensures that your funds are safe and can only be withdrawn by an authorized executor with a proof of your Signed Intent, or returned to you upon cancellation.
+
+For Stealth Sells, assets are locked in a non-custodial Anchor program. User funds are only withdrawable by an authorized executor with a valid Signed Intent, or returned to the user on cancellation.

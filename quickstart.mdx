@@ -7,62 +7,62 @@ description: "Start trading privately on Solana in minutes"
 
 Before you begin, ensure you have the following:
 
-- A Solana wallet (e.g., [Phantom](https://phantom.app/), [Backpack](https://backpack.app/), or [Solflare](https://solflare.com/)).
-- Some SOL in your wallet to pay for transaction fees (though execution fees are taken from the trade).
+- A Solana-compatible wallet (e.g., [Phantom](https://phantom.app/), [Backpack](https://backpack.app/), or [Solflare](https://solflare.com/)).
+- Sufficient SOL for transaction fees (execution fees are deducted from the trade).
 
-## Step 1: Connect to Cloak
+## Step 1: Connect to CLOAK
 
-Navigate to [app.cloak.trade](https://app.cloak.trade) and click the **Connect Wallet** button in the top right corner.
+Navigate to [app.cloak.trade](https://app.cloak.trade) and select **Connect Wallet** in the top-right corner.
 
 <Frame>
   
 </Frame>
 
-Select your wallet provider from the list and approve the connection request.
+Choose your wallet provider and approve the connection request.
 
 ## Step 2: Choose an Execution Mode
 
-Cloak offers different modes depending on your needs:
+CLOAK provides distinct execution modes:
 
-- **Instant**: For immediate execution with privacy.
-- **Stealth**: For large orders that need to be split over time.
-- **Limit**: For setting a specific price target.
+- **Instant**: Single-step execution with intent-based privacy.
+- **Stealth**: Large orders fragmented and executed over a configurable duration.
+- **Limit**: Execution conditional on a specified price level.
 
 <Tip>
-  Use **Stealth Mode** if you are moving a large amount and want to avoid slippage or front-running.
+  Use **Stealth Mode** for large order sizes to reduce slippage and front-running risk.
 </Tip>
 
 ## Step 3: Execute a Swap
 
-1. Select the token you want to **Sell** and the token you want to **Buy**.
-2. Enter the amount to trade.
-3. Adjust **Slippage** and **Priority Fees** in the settings if needed.
-4. Click **Swap**.
+1. Select the **Sell** and **Buy** tokens.
+2. Enter the trade amount.
+3. Optionally adjust **Slippage** and **Priority Fees** in settings.
+4. Select **Swap**.
 
 ### Signing the Intent
 
-Unlike a normal swap, you will be asked to **sign an intent**, not a transaction. This signature authorizes Cloak's executor network to perform the trade on your behalf according to your specified parameters.
+Execution is authorized via an **intent signature**, not a direct transaction signature. This signature authorizes the executor network to perform the trade on your behalf according to the specified parameters.
 
 <Warning>
-  You are **not** sending funds to a contract (unless using Stealth Sell). You are signing a message that allows the trade to happen atomically.
+  You are **not** transferring funds to a contract (except in Stealth Sell flows). You are signing a message that enables atomic execution by the executor.
 </Warning>
 
 ## Step 4: Track Your Trade
 
-Once signed, your order will appear in the **Orders** tab or **History** tab.
+After signing, the order appears under **Orders** or **History**.
 
-- **Status**: You can see if your trade is `Queued`, `Executing`, or `Settled`.
-- **Details**: Click on a trade to view the specific chunks and execution timestamps.
+- **Status**: `Queued`, `Executing`, or `Settled`.
+- **Details**: Select a trade to view chunk-level execution and timestamps.
 
 ## Next Steps
 
-Now that you've made your first trade, learn more about the advanced features:
+Explore advanced execution modes:
 
 <Columns cols={2}>
   <Card icon="user-secret" href="stealth.mdx" title="Stealth Execution">
-    Learn how chunking works.
+    Execution chunking and randomization.
   </Card>
   <Card icon="chart-line" href="/limit-orders" title="Limit Orders">
-    Set price targets privately.
+    Price-conditional execution with order-book privacy.
   </Card>
 </Columns>

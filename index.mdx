@@ -1,50 +1,50 @@
 ---
-title: "Cloak Trade"
+title: "CLOAK"
 description: "Advanced privacy-preserving execution on Solana"
 ---
 
 ## Overview
 
-Cloak Trade allows you to execute swaps on Solana without linking your wallet to the execution or revealing your strategy. We use a network of executor wallets and advanced orchestration to mask your activity and protect you from MEV.
+CLOAK enables execution of swap operations on Solana while decoupling wallet identity from on-chain execution and strategy disclosure. The protocol uses a distributed executor network and orchestration layer to obfuscate transaction attribution and mitigate MEV exposure.
 
 <Card title="Start Trading" icon="rocket" href="https://app.cloak.trade" horizontal>
-  Launch the Cloak Trade app and start trading privately today.
+  Access the CLOAK application to execute trades with privacy-preserving execution.
 </Card>
 
 ## Core Features
 
-Protect your alpha with our advanced execution modes.
+Preserve execution alpha through configurable execution modes.
 
 <Columns cols={2}>
-  <Card title="Instant Private Swap" icon="bolt" href="/features/instant-swap">
-    Execute immediately. Your wallet signs the intent, but our executors submit the transaction.
+  <Card title="Instant Swap" icon="bolt" href="/features/instant-swap">
+    Single-step execution. The client signs an intent; executor nodes submit the on-chain transaction.
   </Card>
   <Card title="Stealth Execution" icon="user-secret" href="/features/stealth">
-    Split large orders into randomized chunks over time to minimize market impact and tracking.
+    Large orders are fragmented into randomized execution chunks over a configurable time window to reduce market impact and attribution.
   </Card>
   <Card title="Private Limit Orders" icon="chart-line" href="/features/limit-orders">
-    Place limit orders that are completely invisible to the public order book until execution.
+    Submit limit orders that remain off the public order book until execution is triggered.
   </Card>
   <Card title="Private DCA" icon="clock" href="/features/dca">
-    Automate Dollar Cost Averaging schedules without leaving an on-chain pattern.
+    Automate dollar-cost averaging schedules without exposing a deterministic on-chain execution pattern.
   </Card>
 </Columns>
 
 ## How it Works
 
-Cloak separates the **intent** (what you want to do) from the **execution** (who does it).
+CLOAK decouples **intent** (declared trade parameters) from **execution** (on-chain transaction submission).
 
 <Columns cols={2}>
   <Card title="Architecture" icon="sitemap" href="/architecture/overview">
-    Learn how the Relay, Orchestrator, and Executor Wallets work together to protect your privacy.
+    Relay, Orchestrator, and Executor Wallet roles and how they enforce privacy guarantees.
   </Card>
   <Card title="Security & Trust" icon="shield-check" href="/security/guarantees">
-    Understand our non-custodial design, escrow mechanisms for sells, and threat model.
+    Non-custodial design, sell-side escrow mechanics, and threat model.
   </Card>
 </Columns>
 
 ## Safety First
 
 <Card title="Non-Custodial" icon="lock" href="/security/non-custodial">
-  Cloak Trade is not a mixer. We do not pool funds. You retain custody of your assets until the moment of execution.
+  CLOAK is not a mixer. User funds are not pooled. Custody remains with the user until execution settlement.
 </Card>
