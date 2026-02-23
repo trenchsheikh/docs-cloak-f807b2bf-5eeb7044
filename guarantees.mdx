@@ -1,0 +1,38 @@
+---
+title: "Guarantees"
+description: "Technical and operational guarantees for the CLOAK platform"
+---
+
+CLOAK provides a suite of technical guarantees designed to ensure the integrity, privacy, and performance of every transaction. Our architecture decouples user intent from on-chain execution, providing a robust framework for secure and private trading.
+
+## Execution Guarantees
+
+Every transaction on CLOAK is governed by strict execution parameters to ensure optimal outcomes:
+
+- **MEV Resistance**: By using a private relay and executor network, CLOAK significantly reduces exposure to front-running, sandwich attacks, and other predatory MEV practices common on public RPC endpoints.
+- **Atomic Settlement**: Swaps are executed atomically. Funds only move when the execution conditions (price, slippage, and routing) are met.
+- **Deterministic Routing**: Our orchestrator calculates the most efficient route across multiple liquidity sources (DEXs) to ensure minimal slippage and best price execution.
+
+## Privacy Guarantees
+
+Privacy is the core pillar of the CLOAK platform. We guarantee:
+
+- **Linkage Disruption**: The direct on-chain link between your source wallet and the execution address is broken. Every swap is submitted by a CLOAK Executor wallet, obfuscating the origin of the trade.
+- **Pattern Disruption**: In Stealth Mode, large orders are broken into smaller, randomized chunks ("chunking") and executed over a variable timeframe, preventing third-party analysis from correlating transactions into a single strategic move.
+- **Stateless Relay**: The CLOAK Relay layer does not store sensitive user data or decryption keys, ensuring that even in the event of a system compromise, user intents remain private.
+
+## Security & Safety
+
+We prioritize the safety of user funds through a non-custodial and transparent architecture:
+
+- **Non-Custodial Architecture**: You retain control of your assets. CLOAK never has access to your private keys.
+- **Trust-Minimized Escrow**: For Stealth Sells, assets are held in a verifiable Anchor program on Solana. Funds can only be released to an authorized executor upon presentation of a valid, user-signed intent, or returned to the user upon cancellation.
+- **Proof of Intent**: Executors can only act on intents that have been cryptographically signed by the user's wallet, providing a mathematical guarantee of authorization.
+
+## Operational Excellence
+
+CLOAK is built for professional-grade reliability:
+
+- **Low-Latency Processing**: Our distributed orchestrator network ensures that intents are processed and dispatched to executors with sub-second latency.
+- **Chain Monitoring**: Real-time monitoring of the Solana blockchain ensures that every transaction is tracked from submission to final settlement.
+- **Fault Tolerance**: In the event of an execution failure (e.g., chain congestion), the orchestrator automatically manages retries or provides a clear path for fund recovery.
